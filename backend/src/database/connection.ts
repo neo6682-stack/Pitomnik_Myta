@@ -3,13 +3,18 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const pool = new Pool({
-  user: process.env.DB_USER || 'dmitryrudenkov',
-  host: process.env.DB_HOST || 'localhost',
-  database: process.env.DB_NAME || 'pitomnik_myta',
-  password: process.env.DB_PASSWORD || '',
-  port: parseInt(process.env.DB_PORT || '5432'),
-});
+// Railway предоставляет DATABASE_URL, локально используем отдельные переменные
+const pool = new Pool(
+  process.env.DATABASE_URL 
+    ? { connectionString: process.env.DATABASE_URL }
+    : {
+        user: process.env.DB_USER || 'dmitryrudenkov',
+        host: process.env.DB_HOST || 'localhost',
+        database: process.env.DB_NAME || 'pitomnik_myta',
+        password: process.env.DB_PASSWORD || '',
+        port: parseInt(process.env.DB_PORT || '5432'),
+      }
+);
 
 export const connectDB = async () => {
   try {
