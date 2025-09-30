@@ -2,12 +2,13 @@
   "name": "pitomnik-myta",
   "version": "1.0.0",
   "description": "Бизнес-платформа для питомниководства с каталогом растений",
-  "main": "index.js",
+  "main": "backend/dist/index.js",
   "scripts": {
+    "start": "cd backend && npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && npm run dev",
     "client": "cd frontend && npm start",
-    "build": "cd frontend && npm run build",
+    "build": "cd backend && npm run build",
     "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
     "parse-catalog": "node scripts/parse-catalog.js",
     "import-catalog": "node scripts/import-to-db.js"
