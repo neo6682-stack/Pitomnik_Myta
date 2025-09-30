@@ -44,6 +44,11 @@ function copyDir(src, dest) {
         .replace(/:\s*Array<[^>]+>/g, '')
         .replace(/:\s*\w+\[\]/g, '')
         
+        // Remove type annotations from function parameters
+        .replace(/\(\s*(\w+)\s*:\s*[^,)]+/g, '($1')
+        .replace(/,\s*(\w+)\s*:\s*[^,)]+/g, ', $1')
+        .replace(/\(\s*(\w+)\s*:\s*[^)]+\)/g, '($1)')
+        
         // Remove export statements
         .replace(/export\s+/g, '')
         
