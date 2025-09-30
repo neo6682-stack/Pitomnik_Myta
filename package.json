@@ -2,9 +2,9 @@
   "name": "pitomnik-myta",
   "version": "1.0.0",
   "description": "Бизнес-платформа для питомниководства с каталогом растений",
-  "main": "backend/dist/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "cd backend && npm run start",
+    "start": "npm run build && cd backend && npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && npm run dev",
     "client": "cd frontend && npm start",
