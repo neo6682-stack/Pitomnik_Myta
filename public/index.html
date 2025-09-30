@@ -1377,8 +1377,11 @@
         </div>
     </div>
 
-    <script>
-        // Встроенные данные растений
+        <script>
+            // API Configuration
+            const API_BASE_URL = 'https://pitomnikmyta-production.up.railway.app/api';
+            
+            // Встроенные данные растений
         const PLANTS_DATA = [
             {
                 "id": 1,
@@ -1574,9 +1577,25 @@
             {"id": 6, "name": "Декоративные травы", "description": "Категория растений: Декоративные травы", "slug": "декоративные-травы"}
         ];
 
-        let currentPage = 1;
-        let totalPages = 1;
-        let currentFilters = {};
+            let currentPage = 1;
+            let totalPages = 1;
+            let currentFilters = {};
+            let useAPI = false;
+
+            // Проверка доступности API
+            async function checkAPI() {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/health`);
+                    if (response.ok) {
+                        useAPI = true;
+                        console.log('✅ API доступен, используем backend');
+                        return true;
+                    }
+                } catch (error) {
+                    console.log('⚠️ API недоступен, используем встроенные данные');
+                }
+                return false;
+            }
 
         // Header scroll functionality
         window.addEventListener('scroll', function() {
@@ -1925,8 +1944,12 @@
         });
 
         // Функция инициализации
-        function initializeApp() {
+        async function initializeApp() {
             try {
+                // Сначала проверяем API
+                await checkAPI();
+                
+                // Загружаем данные
                 loadStats();
                 loadCategories();
                 loadPlants();

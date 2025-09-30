@@ -8,8 +8,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "VITE_API_URL": "https://pitomnik-myta-frontend.vercel.app"
-  }
+  ]
 }

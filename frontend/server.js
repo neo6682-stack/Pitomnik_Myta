@@ -77,8 +77,15 @@ const server = http.createServer((req, res) => {
           res.end(`Ошибка сервера: ${err.code}`);
         }
       } else {
+        let responseBody = content;
+
+        if (contentType === 'text/html') {
+          const apiBase = process.env.API_BASE_URL || 'http://localhost:3001/api';
+          responseBody = content.toString('utf-8').replace(/{{API_BASE_URL}}/g, apiBase);
+        }
+
         res.writeHead(200, { 'Content-Type': contentType });
-        res.end(content, 'utf-8');
+        res.end(responseBody, 'utf-8');
       }
     });
   });
