@@ -32,25 +32,74 @@ async function setupDatabase() {
     const plants = JSON.parse(fs.readFileSync(plantsPath, 'utf8'));
 
     for (const plant of plants) {
+      // Создаем slug если его нет
+      const slug = plant.slug || plant.name.toLowerCase()
+        .replace(/[^a-z0-9а-я]/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+
       await pool.query(`
-        INSERT INTO plants (name, slug, description, price, category, characteristics, image_url, created_at, updated_at)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, NOW(), NOW())
+        INSERT INTO plants (
+          name, slug, description, short_description, category, 
+          light_requirements, is_medicinal, is_honey_plant, is_evergreen,
+          is_roof_suitable, is_ground_cover, has_aroma, is_floristic_cut,
+          is_dried_flower, coastal_climate_resistant,
+          height_min, height_max, width_min, width_max,
+          flowering_period, flower_color, watering_frequency,
+          soil_type, frost_resistance, price, wholesale_price,
+          stock_quantity, is_available, image_url, characteristics,
+          created_at, updated_at
+        )
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, NOW(), NOW())
         ON CONFLICT (slug) DO UPDATE SET
           name = EXCLUDED.name,
           description = EXCLUDED.description,
-          price = EXCLUDED.price,
+          short_description = EXCLUDED.short_description,
           category = EXCLUDED.category,
-          characteristics = EXCLUDED.characteristics,
+          light_requirements = EXCLUDED.light_requirements,
+          is_medicinal = EXCLUDED.is_medicinal,
+          is_honey_plant = EXCLUDED.is_honey_plant,
+          is_evergreen = EXCLUDED.is_evergreen,
+          is_roof_suitable = EXCLUDED.is_roof_suitable,
+          is_ground_cover = EXCLUDED.is_ground_cover,
+          has_aroma = EXCLUDED.has_aroma,
+          height_min = EXCLUDED.height_min,
+          height_max = EXCLUDED.height_max,
+          price = EXCLUDED.price,
           image_url = EXCLUDED.image_url,
+          characteristics = EXCLUDED.characteristics,
           updated_at = NOW()
       `, [
         plant.name,
-        plant.slug,
-        plant.description,
-        plant.price,
-        plant.category,
-        JSON.stringify(plant.characteristics),
-        plant.image_url
+        slug,
+        plant.description || '',
+        plant.short_description || '',
+        plant.category || '',
+        plant.light_requirements || null,
+        plant.is_medicinal || false,
+        plant.is_honey_plant || false,
+        plant.is_evergreen || false,
+        plant.is_roof_suitable || false,
+        plant.is_ground_cover || false,
+        plant.has_aroma || false,
+        plant.is_floristic_cut || false,
+        plant.is_dried_flower || false,
+        plant.coastal_climate_resistant || false,
+        plant.height_min || null,
+        plant.height_max || null,
+        plant.width_min || null,
+        plant.width_max || null,
+        plant.flowering_period || null,
+        plant.flower_color || null,
+        plant.watering_frequency || null,
+        plant.soil_type || null,
+        plant.frost_resistance || null,
+        plant.price || null,
+        plant.wholesale_price || null,
+        plant.stock_quantity || 0,
+        plant.is_available !== false, // default true
+        plant.image_url || null,
+        JSON.stringify(plant.characteristics || {})
       ]);
     }
     console.log(`✅ Импортировано ${plants.length} растений`);

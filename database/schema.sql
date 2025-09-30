@@ -1,5 +1,5 @@
--- Создание базы данных для каталога растений
-CREATE DATABASE pitomnik_myta;
+-- Схема базы данных для каталога растений
+-- База данных уже создана Railway
 
 -- Таблица категорий растений
 CREATE TABLE categories (
@@ -8,7 +8,8 @@ CREATE TABLE categories (
     description TEXT,
     slug VARCHAR(100) UNIQUE NOT NULL,
     parent_id INTEGER REFERENCES categories(id),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Таблица растений
@@ -19,6 +20,9 @@ CREATE TABLE plants (
     description TEXT,
     short_description TEXT,
     category_id INTEGER REFERENCES categories(id),
+    category VARCHAR(100), -- Для совместимости с JSON данными
+    characteristics JSONB, -- Характеристики в JSON формате
+    image_url VARCHAR(500), -- URL изображения
     
     -- Характеристики
     light_requirements VARCHAR(50), -- 'sun', 'partial_shade', 'shade'
