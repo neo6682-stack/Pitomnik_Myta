@@ -13,7 +13,7 @@ import { connectDB } from './database/connection';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
 // Подключение к базе данных
 connectDB();
@@ -77,7 +77,7 @@ app.get('/api', (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Сервер запущен на порту ${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
   console.log(`📚 API документация: http://localhost:${PORT}/api`);
