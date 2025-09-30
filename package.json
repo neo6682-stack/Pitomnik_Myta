@@ -12,7 +12,8 @@
     "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
     "parse-catalog": "node scripts/parse-catalog.js",
     "import-catalog": "node scripts/import-to-db.js",
-    "setup-railway-db": "node scripts/setup-railway-db.js"
+    "setup-railway-db": "node scripts/setup-railway-db.js",
+    "import-railway-data": "node scripts/import-railway-data.js"
   },
   "keywords": ["plants", "nursery", "catalog", "ecommerce"],
   "author": "Питомник МЯТА - Ирина Леонидовна",
