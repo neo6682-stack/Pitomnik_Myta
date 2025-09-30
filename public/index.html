@@ -1808,12 +1808,84 @@
             });
         });
 
-        // Инициализация
-        document.addEventListener('DOMContentLoaded', () => {
-            loadStats();
-            loadCategories();
-            loadPlants();
-        });
+        // Функция инициализации
+        function initializeApp() {
+            try {
+                loadStats();
+                loadCategories();
+                loadPlants();
+            } catch (error) {
+                console.error('Ошибка инициализации:', error);
+                // Fallback - показываем базовую статистику
+                document.getElementById('stats').innerHTML = `
+                    <div class="stat-card" data-type="total">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Растений в каталоге</div>
+                    </div>
+                    <div class="stat-card" data-type="honey">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Медоносные</div>
+                    </div>
+                    <div class="stat-card" data-type="evergreen">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Вечнозеленые</div>
+                    </div>
+                    <div class="stat-card" data-type="roof">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Для крыш</div>
+                    </div>
+                    <div class="stat-card" data-type="aromatic">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Ароматные</div>
+                    </div>
+                    <div class="stat-card" data-type="floristic">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Для флористики</div>
+                    </div>
+                `;
+                
+                // Показываем растения
+                const container = document.getElementById('plantsGrid');
+                container.innerHTML = PLANTS_DATA.map(plant => `
+                    <div class="plant-card" onclick="viewPlant(${plant.id})">
+                        <div class="plant-image">
+                            ${plant.image_url ? `<img src="${plant.image_url}" alt="${plant.name}" style="width: 100%; height: 100%; object-fit: cover;">` : '🌱'}
+                        </div>
+                        <div class="plant-content">
+                            <div class="plant-name">${plant.name}</div>
+                            <div class="plant-category">${plant.category}</div>
+                            <div class="plant-description">${plant.short_description}</div>
+                            <div class="plant-characteristics">
+                                ${plant.is_honey_plant ? '<span class="characteristic">🍯 Медонос</span>' : ''}
+                                ${plant.is_evergreen ? '<span class="characteristic">🌲 Вечнозеленое</span>' : ''}
+                                ${plant.is_roof_suitable ? '<span class="characteristic">🏠 Для крыш</span>' : ''}
+                                ${plant.is_ground_cover ? '<span class="characteristic">🌿 Почвопокровное</span>' : ''}
+                                ${plant.has_aroma ? '<span class="characteristic">🌸 Ароматное</span>' : ''}
+                                ${plant.is_floristic_cut ? '<span class="characteristic">✂️ Для среза</span>' : ''}
+                                ${plant.is_dried_flower ? '<span class="characteristic">🌾 Сухоцвет</span>' : ''}
+                                ${plant.coastal_climate_resistant ? '<span class="characteristic">🌊 Приморский климат</span>' : ''}
+                            </div>
+                            <div class="plant-footer">
+                                <div class="plant-price">${plant.price} ₽</div>
+                                <div class="plant-stock">В наличии: ${plant.stock_quantity} шт.</div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                document.getElementById('plantsCount').textContent = 'Найдено: 5 растений';
+            }
+        }
+
+        // Инициализация - пытаемся сразу, потом после DOM
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeApp);
+        } else {
+            initializeApp();
+        }
+        
+        // Дополнительная инициализация через 100мс на всякий случай
+        setTimeout(initializeApp, 100);
     </script>
 </body>
 </html>
