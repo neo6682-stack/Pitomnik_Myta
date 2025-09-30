@@ -42,6 +42,15 @@ app.use('/api/', limiter);
 app.use('/api/plants', plantsRouter);
 app.use('/api/categories', categoriesRouter);
 
+// Simple health check for Railway
+app.get('/', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    message: 'Pitomnik Myta API is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ 
