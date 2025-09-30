@@ -3,13 +3,23 @@
   "name": "pitomnik-myta-frontend",
   "buildCommand": "echo 'Static site - no build needed'",
   "outputDirectory": "public",
+  "functions": {
+    "api/*.js": {
+      "runtime": "@vercel/node@3.0.7"
+    }
+  },
   "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
   "env": {
-    "VITE_API_URL": "https://pitomnik-myta-frontend.vercel.app"
+    "VITE_API_URL": "https://pitomnik-myta-frontend.vercel.app",
+    "DATABASE_URL": "postgresql://postgres:TDQsyKKXQVdhebrKbrFlCyLxcwVwIhWY@gondola.proxy.rlwy.net:43679/railway"
   }
 }
