@@ -301,7 +301,7 @@
         /* Header */
         .header {
             background: var(--white);
-            background-image: url('assets/logo-background.jpg');
+            background-image: url('assets/header-background.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -1095,7 +1095,31 @@
     <section class="stats">
         <div class="stats-content">
             <div class="stats-grid" id="stats">
-                <!-- Статистика будет загружена динамически -->
+                <!-- Fallback статистика -->
+                <div class="stat-card" data-type="total">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Растений в каталоге</div>
+                </div>
+                <div class="stat-card" data-type="honey">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Медоносные</div>
+                </div>
+                <div class="stat-card" data-type="evergreen">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Вечнозеленые</div>
+                </div>
+                <div class="stat-card" data-type="roof">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Для крыш</div>
+                </div>
+                <div class="stat-card" data-type="aromatic">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Ароматные</div>
+                </div>
+                <div class="stat-card" data-type="floristic">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Для флористики</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1137,11 +1161,103 @@
         <div class="plants-content">
             <div class="plants-header">
                 <h2 class="plants-title">Наши растения</h2>
-                <div class="plants-count" id="plantsCount">Загрузка...</div>
+                <div class="plants-count" id="plantsCount">Найдено: 5 растений</div>
             </div>
             
             <div id="plantsGrid" class="plants-grid">
-                <div class="loading">Загрузка каталога растений...</div>
+                <!-- Fallback растения -->
+                <div class="plant-card" onclick="viewPlant(1)">
+                    <div class="plant-image">
+                        <img src="/assets/plants/akvilegiya-obyknovennaya-clementinesalmon-rose.jpg" alt="Аквилегия обыкновенная" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="plant-content">
+                        <div class="plant-name">Аквилегия обыкновенная "CLEMENTINE"(SALMON ROSE)</div>
+                        <div class="plant-category">Медоносные растения</div>
+                        <div class="plant-description">Цвет растения: Сине-зеленый. Цвет цветка: Розово-лососевый. Высота: 30-40 см. Время цветения: Май-июль.</div>
+                        <div class="plant-characteristics">
+                            <span class="characteristic">🍯 Медонос</span>
+                            <span class="characteristic">🌸 Ароматное</span>
+                        </div>
+                        <div class="plant-footer">
+                            <div class="plant-price">250 ₽</div>
+                            <div class="plant-stock">В наличии: 50 шт.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="plant-card" onclick="viewPlant(2)">
+                    <div class="plant-image">
+                        <img src="/assets/plants/dushitsa-obyknovennaya-feya.jpg" alt="Душица обыкновенная" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="plant-content">
+                        <div class="plant-name">Душица обыкновенная "Фея"</div>
+                        <div class="plant-category">Ароматные растения</div>
+                        <div class="plant-description">Многолетнее ароматное лекарственное растение. Высота: 20-30 см. Цветение: Июль-август.</div>
+                        <div class="plant-characteristics">
+                            <span class="characteristic">🍯 Медонос</span>
+                            <span class="characteristic">🌸 Ароматное</span>
+                            <span class="characteristic">🏠 Для крыш</span>
+                            <span class="characteristic">🌿 Почвопокровное</span>
+                        </div>
+                        <div class="plant-footer">
+                            <div class="plant-price">180 ₽</div>
+                            <div class="plant-stock">В наличии: 100 шт.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="plant-card" onclick="viewPlant(3)">
+                    <div class="plant-image">
+                        <img src="/assets/plants/moliniya-golubaya-heidebraut.jpg" alt="Молиния голубая" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="plant-content">
+                        <div class="plant-name">Молиния голубая "Heidebraut"</div>
+                        <div class="plant-category">Декоративные травы</div>
+                        <div class="plant-description">Декоративная трава с красивыми соцветиями. Высота: 60-80 см. Цветение: Август-сентябрь.</div>
+                        <div class="plant-characteristics">
+                            <span class="characteristic">✂️ Для среза</span>
+                            <span class="characteristic">🌾 Сухоцвет</span>
+                        </div>
+                        <div class="plant-footer">
+                            <div class="plant-price">320 ₽</div>
+                            <div class="plant-stock">В наличии: 25 шт.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="plant-card" onclick="viewPlant(4)">
+                    <div class="plant-image">
+                        <img src="/assets/plants/akvilegiya-obyknovennaya-clementinesalmon-cream.jpg" alt="Аквилегия обыкновенная" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="plant-content">
+                        <div class="plant-name">Аквилегия обыкновенная "CLEMENTINE"(SALMON CREAM)</div>
+                        <div class="plant-category">Многолетники</div>
+                        <div class="plant-description">Цвет растения: Сине-зеленый. Цвет цветка: Лососево-кремовый. Высота: 30-40 см. Время цветения: Май-июль.</div>
+                        <div class="plant-characteristics">
+                            <span class="characteristic">🍯 Медонос</span>
+                            <span class="characteristic">🌸 Ароматное</span>
+                        </div>
+                        <div class="plant-footer">
+                            <div class="plant-price">250 ₽</div>
+                            <div class="plant-stock">В наличии: 35 шт.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="plant-card" onclick="viewPlant(5)">
+                    <div class="plant-image">
+                        <img src="/assets/plants/akvilegiya-golubaya-s-belym-acaerulea.jpg" alt="Аквилегия голубая" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="plant-content">
+                        <div class="plant-name">Аквилегия голубая с белым (A.caerulea)</div>
+                        <div class="plant-category">Многолетники</div>
+                        <div class="plant-description">Цвет растения: Сине-зеленый. Цвет цветка: Голубой с белым. Высота: 40-60 см. Время цветения: Май-июнь.</div>
+                        <div class="plant-characteristics">
+                            <span class="characteristic">🍯 Медонос</span>
+                            <span class="characteristic">🌸 Ароматное</span>
+                        </div>
+                        <div class="plant-footer">
+                            <div class="plant-price">280 ₽</div>
+                            <div class="plant-stock">В наличии: 40 шт.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="pagination" class="pagination">
@@ -1877,15 +1993,26 @@
             }
         }
 
+        // Принудительная инициализация - несколько попыток
+        function forceInit() {
+            try {
+                initializeApp();
+            } catch (e) {
+                console.log('Retry initialization...');
+            }
+        }
+
         // Инициализация - пытаемся сразу, потом после DOM
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeApp);
+            document.addEventListener('DOMContentLoaded', forceInit);
         } else {
-            initializeApp();
+            forceInit();
         }
         
-        // Дополнительная инициализация через 100мс на всякий случай
-        setTimeout(initializeApp, 100);
+        // Дополнительные попытки инициализации
+        setTimeout(forceInit, 100);
+        setTimeout(forceInit, 500);
+        setTimeout(forceInit, 1000);
     </script>
 </body>
 </html>
