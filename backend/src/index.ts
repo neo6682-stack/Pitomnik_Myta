@@ -13,7 +13,7 @@ import { connectDB } from './database/connection';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = parseInt(process.env.PORT || '8080', 10);
 
 // Подключение к базе данных
 connectDB();
