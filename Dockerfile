@@ -7,18 +7,15 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install all dependencies
+RUN npm install
 
-# Copy backend source
+# Copy backend source and root files
 COPY backend/ ./backend/
-COPY dist/ ./dist/
 COPY index.js ./
 
-# Build backend
-WORKDIR /app/backend
-RUN npm install typescript && npx tsc
-WORKDIR /app
+# Build TypeScript (this creates dist/ folder)
+RUN npm run build
 
 # Expose port
 EXPOSE 8080
