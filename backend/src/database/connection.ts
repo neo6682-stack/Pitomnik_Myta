@@ -23,7 +23,8 @@ export const connectDB = async () => {
     client.release();
   } catch (error) {
     console.error('❌ Ошибка подключения к базе данных:', error);
-    process.exit(1);
+    console.log('⚠️  Продолжаем работу без базы данных...');
+    // process.exit(1); // Временно отключаем выход из приложения
   }
 };
 
