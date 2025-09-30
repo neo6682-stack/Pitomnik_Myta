@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "frontend/server.js",
-      "use": "@vercel/node"
-    }
-  ],
+  "name": "pitomnik-myta-frontend",
+  "buildCommand": "echo 'Static site - no build needed'",
+  "outputDirectory": "public",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "frontend/server.js"
+      "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "VITE_API_URL": "https://pitomnikmyta-production.up.railway.app"
+  }
 }
