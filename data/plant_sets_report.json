@@ -1,0 +1,113 @@
+{
+  "created_at": "2025-09-29T10:37:46.887Z",
+  "total_sets": 10,
+  "sets_by_category": {
+    "honey": 1,
+    "roof": 1,
+    "aroma": 1,
+    "floristic": 1,
+    "evergreen": 1,
+    "coastal": 1,
+    "dried_flower": 1,
+    "ground_cover": 1,
+    "seasonal": 1,
+    "premium": 1
+  },
+  "price_range": {
+    "min": 1085,
+    "max": 1960,
+    "average": 1457.8
+  },
+  "sets": [
+    {
+      "name": "Пасека PRO",
+      "category": "honey",
+      "price": 1960,
+      "original_price": 2240,
+      "plants_count": 8,
+      "is_premium": false,
+      "is_seasonal": false
+    },
+    {
+      "name": "Зелёная крыша",
+      "category": "roof",
+      "price": 1470,
+      "original_price": 1680,
+      "plants_count": 6,
+      "is_premium": false,
+      "is_seasonal": false
+    },
+    {
+      "name": "Сад ароматов",
+      "category": "aroma",
+      "price": 1715,
+      "original_price": 1960,
+      "plants_count": 7,
+      "is_premium": false,
+      "is_seasonal": false
+    },
+    {
+      "name": "Флористический набор",
+      "category": "floristic",
+      "price": 1470,
+      "original_price": 1680,
+      "plants_count": 6,
+      "is_premium": false,
+      "is_seasonal": false
+    },
+    {
+      "name": "Вечнозелёный микс",
+      "category": "evergreen",
+      "price": 1575,
+      "original_price": 1800,
+      "plants_count": 5,
+      "is_premium": false,
+      "is_seasonal": false
+    },
+    {
+      "name": "Приморский сад",
+      "category": "coastal",
+      "price": 1470,
+      "original_price": 1680,
+      "plants_count": 6,
+      "is_premium": false,
+      "is_seasonal": false
+    },
+    {
+      "name": "Сухоцветы",
+      "category": "dried_flower",
+      "price": 1225,
+      "original_price": 1400,
+      "plants_count": 5,
+      "is_premium": false,
+      "is_seasonal": false
+    },
+    {
+      "name": "Почвопокровный ковер",
+      "category": "ground_cover",
+      "price": 1085,
+      "original_price": 1240,
+      "plants_count": 4,
+      "is_premium": false,
+      "is_seasonal": false
+    },
+    {
+      "name": "Весенний сад",
+      "category": "seasonal",
+      "price": 1348,
+      "original_price": 1540,
+      "plants_count": 6,
+      "is_premium": false,
+      "is_seasonal": true
+    },
+    {
+      "name": "Премиум коллекция",
+      "category": "premium",
+      "price": 1260,
+      "original_price": 1440,
+      "plants_count": 4,
+      "is_premium": true,
+      "is_seasonal": false
+    }
+  ]
+}

@@ -1,0 +1,524 @@
+[
+  {
+    "id": "pevabh1pu",
+    "name": "Пасека PRO",
+    "description": "Профессиональный набор медоносных растений для пчеловодов. Включает разнообразные цветущие растения, обеспечивающие непрерывный медосбор с весны до осени. Все растения подобраны для максимальной продуктивности и привлекательности для пчел.",
+    "short_description": "Профессиональный набор медоносных растений для пчеловодов. Включает разнообразные цветущие растения, обеспечивающие непрерывный медосбор с весны до ос...",
+    "price": 1960,
+    "original_price": 2240,
+    "category": "honey",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "пасека-pro",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 1,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON ROSE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 2,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON CREAM)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 3,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 4,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"WINKY DOUBLE\"(RED WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 5,
+        "quantity": 1,
+        "plant_name": "Аквилегия Mix",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 6,
+        "quantity": 1,
+        "plant_name": "Аквилегия голубая с белым (A.caerulea)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 7,
+        "quantity": 1,
+        "plant_name": "Аквилегия \"Swan Red + White\"",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 8,
+        "quantity": 1,
+        "plant_name": "Аквилегия Желтая звезда (A. chrysantha)",
+        "plant_price": 350
+      }
+    ]
+  },
+  {
+    "id": "9vhgdvvit",
+    "name": "Зелёная крыша",
+    "description": "Специальный набор растений для озеленения крыш и террас. Включает низкорослые, засухоустойчивые и ветроустойчивые растения, идеально подходящие для экстенсивного озеленения крыш.",
+    "short_description": "Специальный набор растений для озеленения крыш и террас. Включает низкорослые, засухоустойчивые и ветроустойчивые растения, идеально подходящие для эк...",
+    "price": 1470,
+    "original_price": 1680,
+    "category": "roof",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "зелная-крыша",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 1,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON ROSE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 2,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON CREAM)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 3,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 4,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"WINKY DOUBLE\"(RED WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 5,
+        "quantity": 1,
+        "plant_name": "Аквилегия Mix",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 6,
+        "quantity": 1,
+        "plant_name": "Аквилегия голубая с белым (A.caerulea)",
+        "plant_price": 350
+      }
+    ]
+  },
+  {
+    "id": "nve3gv12u",
+    "name": "Сад ароматов",
+    "description": "Коллекция ароматных растений для создания благоухающего сада. Включает растения с различными типами ароматов: цветочными, пряными, цитрусовыми. Идеально для создания ароматических зон в саду.",
+    "short_description": "Коллекция ароматных растений для создания благоухающего сада. Включает растения с различными типами ароматов: цветочными, пряными, цитрусовыми. Идеаль...",
+    "price": 1715,
+    "original_price": 1960,
+    "category": "aroma",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "сад-ароматов",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 1,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON ROSE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 2,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON CREAM)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 3,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 4,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"WINKY DOUBLE\"(RED WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 5,
+        "quantity": 1,
+        "plant_name": "Аквилегия Mix",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 6,
+        "quantity": 1,
+        "plant_name": "Аквилегия голубая с белым (A.caerulea)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 7,
+        "quantity": 1,
+        "plant_name": "Аквилегия \"Swan Red + White\"",
+        "plant_price": 350
+      }
+    ]
+  },
+  {
+    "id": "llm45itud",
+    "name": "Флористический набор",
+    "description": "Профессиональный набор растений для флористов и любителей букетов. Включает растения с красивыми цветами, подходящие для срезки, сухоцветов и создания композиций.",
+    "short_description": "Профессиональный набор растений для флористов и любителей букетов. Включает растения с красивыми цветами, подходящие для срезки, сухоцветов и создания...",
+    "price": 1470,
+    "original_price": 1680,
+    "category": "floristic",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "флористический-набор",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 1,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON ROSE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 2,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON CREAM)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 3,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 4,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"WINKY DOUBLE\"(RED WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 5,
+        "quantity": 1,
+        "plant_name": "Аквилегия Mix",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 6,
+        "quantity": 1,
+        "plant_name": "Аквилегия голубая с белым (A.caerulea)",
+        "plant_price": 350
+      }
+    ]
+  },
+  {
+    "id": "47rpa4r6a",
+    "name": "Вечнозелёный микс",
+    "description": "Набор вечнозеленых растений для круглогодичной декоративности сада. Обеспечивает красивый вид сада даже в зимний период. Включает различные формы и размеры вечнозеленых растений.",
+    "short_description": "Набор вечнозеленых растений для круглогодичной декоративности сада. Обеспечивает красивый вид сада даже в зимний период. Включает различные формы и ра...",
+    "price": 1575,
+    "original_price": 1800,
+    "category": "evergreen",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "вечнозелный-микс",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 16,
+        "quantity": 1,
+        "plant_name": "Армерия приморская \"Deep Rose\"",
+        "plant_price": 450
+      },
+      {
+        "plant_id": 17,
+        "quantity": 1,
+        "plant_name": "Армерия приморская \"Deep Rose\"",
+        "plant_price": 450
+      },
+      {
+        "plant_id": 18,
+        "quantity": 1,
+        "plant_name": "Армерия ложноармерия \"Ballerina\"(lilac)",
+        "plant_price": 450
+      },
+      {
+        "plant_id": 19,
+        "quantity": 1,
+        "plant_name": "Армерия приморская \"Alba\"",
+        "plant_price": 450
+      },
+      {
+        "plant_id": 33,
+        "quantity": 1,
+        "plant_name": "Вероника колосистая \"Heidekind\"",
+        "plant_price": 450
+      }
+    ]
+  },
+  {
+    "id": "ej01v35ei",
+    "name": "Приморский сад",
+    "description": "Специальный набор растений, устойчивых к приморскому климату. Включает растения, которые хорошо переносят соленые брызги, сильные ветры и повышенную влажность воздуха.",
+    "short_description": "Специальный набор растений, устойчивых к приморскому климату. Включает растения, которые хорошо переносят соленые брызги, сильные ветры и повышенную в...",
+    "price": 1470,
+    "original_price": 1680,
+    "category": "coastal",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "приморский-сад",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 1,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON ROSE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 2,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON CREAM)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 3,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 4,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"WINKY DOUBLE\"(RED WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 5,
+        "quantity": 1,
+        "plant_name": "Аквилегия Mix",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 7,
+        "quantity": 1,
+        "plant_name": "Аквилегия \"Swan Red + White\"",
+        "plant_price": 350
+      }
+    ]
+  },
+  {
+    "id": "6gvno7ns1",
+    "name": "Сухоцветы",
+    "description": "Коллекция растений, идеально подходящих для создания сухоцветов и зимних композиций. Включает растения с прочными цветами и стеблями, сохраняющими форму и цвет после высушивания.",
+    "short_description": "Коллекция растений, идеально подходящих для создания сухоцветов и зимних композиций. Включает растения с прочными цветами и стеблями, сохраняющими фор...",
+    "price": 1225,
+    "original_price": 1400,
+    "category": "dried_flower",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "сухоцветы",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 1,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON ROSE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 2,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON CREAM)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 3,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 4,
+        "quantity": 1,
+        "plant_name": "Аквилегия обыкновенная \"WINKY DOUBLE\"(RED WHITE)",
+        "plant_price": 350
+      },
+      {
+        "plant_id": 5,
+        "quantity": 1,
+        "plant_name": "Аквилегия Mix",
+        "plant_price": 350
+      }
+    ]
+  },
+  {
+    "id": "v0r5iayzy",
+    "name": "Почвопокровный ковер",
+    "description": "Набор почвопокровных растений для создания живого ковра в саду. Включает низкорослые, стелющиеся растения, которые быстро разрастаются и подавляют сорняки.",
+    "short_description": "Набор почвопокровных растений для создания живого ковра в саду. Включает низкорослые, стелющиеся растения, которые быстро разрастаются и подавляют сор...",
+    "price": 1085,
+    "original_price": 1240,
+    "category": "ground_cover",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "почвопокровный-ковер",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 10,
+        "quantity": 1,
+        "plant_name": "Анемона виноградолистная",
+        "plant_price": 325
+      },
+      {
+        "plant_id": 11,
+        "quantity": 1,
+        "plant_name": "Анемона лесная",
+        "plant_price": 325
+      },
+      {
+        "plant_id": 16,
+        "quantity": 1,
+        "plant_name": "Армерия приморская \"Deep Rose\"",
+        "plant_price": 450
+      },
+      {
+        "plant_id": 17,
+        "quantity": 1,
+        "plant_name": "Армерия приморская \"Deep Rose\"",
+        "plant_price": 450
+      }
+    ]
+  },
+  {
+    "id": "pj44cn8n1",
+    "name": "Весенний сад",
+    "description": "Набор раннецветущих растений для создания яркого весеннего сада. Включает растения, которые зацветают одними из первых и радуют глаз после долгой зимы.",
+    "short_description": "Набор раннецветущих растений для создания яркого весеннего сада. Включает растения, которые зацветают одними из первых и радуют глаз после долгой зимы...",
+    "price": 1348,
+    "original_price": 1540,
+    "category": "seasonal",
+    "is_seasonal": true,
+    "season": "spring",
+    "is_premium": false,
+    "is_available": true,
+    "image_url": null,
+    "slug": "весенний-сад",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 10,
+        "quantity": 1,
+        "plant_name": "Анемона виноградолистная",
+        "plant_price": 325
+      },
+      {
+        "plant_id": 147,
+        "quantity": 1,
+        "plant_name": "Осока \"Milk Chocolate\"",
+        "plant_price": 275
+      },
+      {
+        "plant_id": 148,
+        "quantity": 1,
+        "plant_name": "Осока волосистая \"Frosted Curls\"",
+        "plant_price": 275
+      },
+      {
+        "plant_id": 149,
+        "quantity": 1,
+        "plant_name": "Осока Морроу \"Variegata\"",
+        "plant_price": 375
+      },
+      {
+        "plant_id": 150,
+        "quantity": 1,
+        "plant_name": "Осока \"Rosea\"",
+        "plant_price": 275
+      },
+      {
+        "plant_id": 190,
+        "quantity": 1,
+        "plant_name": "Сеслерия серебристая",
+        "plant_price": 400
+      }
+    ]
+  },
+  {
+    "id": "30sv4w3du",
+    "name": "Премиум коллекция",
+    "description": "Эксклюзивная коллекция редких и коллекционных сортов растений. Включает самые ценные и декоративные экземпляры из нашего каталога. Идеально для коллекционеров и ценителей редких растений.",
+    "short_description": "Эксклюзивная коллекция редких и коллекционных сортов растений. Включает самые ценные и декоративные экземпляры из нашего каталога. Идеально для коллек...",
+    "price": 1260,
+    "original_price": 1440,
+    "category": "premium",
+    "is_seasonal": false,
+    "season": null,
+    "is_premium": true,
+    "is_available": true,
+    "image_url": null,
+    "slug": "премиум-коллекция",
+    "created_at": "2025-09-29T10:37:46.886Z",
+    "plants": [
+      {
+        "plant_id": 16,
+        "quantity": 1,
+        "plant_name": "Армерия приморская \"Deep Rose\"",
+        "plant_price": 450
+      },
+      {
+        "plant_id": 17,
+        "quantity": 1,
+        "plant_name": "Армерия приморская \"Deep Rose\"",
+        "plant_price": 450
+      },
+      {
+        "plant_id": 18,
+        "quantity": 1,
+        "plant_name": "Армерия ложноармерия \"Ballerina\"(lilac)",
+        "plant_price": 450
+      },
+      {
+        "plant_id": 19,
+        "quantity": 1,
+        "plant_name": "Армерия приморская \"Alba\"",
+        "plant_price": 450
+      }
+    ]
+  }
+]

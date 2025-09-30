@@ -1,0 +1,41 @@
+{
+  "parsed_at": "2025-09-29T10:26:33.938Z",
+  "nursery": {
+    "name": "Питомник многолетних цветов и трав \"МЯТА\"",
+    "location": "Ростовская область, Неклиновский район, село Николаевка",
+    "contacts": {
+      "phone": "+7 918 55 28 423",
+      "contact_person": "Ирина Леонидовна",
+      "email": "Mytapitomnik@mail.ru"
+    }
+  },
+  "statistics": {
+    "total_plants": 220,
+    "available_plants": 220,
+    "categories_count": 4,
+    "total_value": 928475,
+    "honey_plants": 167,
+    "evergreen_plants": 52,
+    "roof_suitable": 132,
+    "ground_cover": 85,
+    "aromatic_plants": 220,
+    "medicinal_plants": 0,
+    "floristic_cut": 202,
+    "dried_flowers": 160,
+    "coastal_resistant": 181,
+    "sun_plants": 180,
+    "shade_plants": 40,
+    "partial_shade_plants": 0
+  },
+  "categories": [
+    "Медоносные растения",
+    "Растения для крыш",
+    "Многолетники",
+    "Вечнозеленые растения"
+  ],
+  "price_range": {
+    "min": 275,
+    "max": 450,
+    "average": 350.6818181818182
+  }
+}
