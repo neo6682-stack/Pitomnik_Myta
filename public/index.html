@@ -1262,7 +1262,202 @@
     </div>
 
     <script>
-        const API_BASE = 'data'; // Используем локальные данные
+        // Встроенные данные растений
+        const PLANTS_DATA = [
+            {
+                "id": 1,
+                "name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON ROSE)",
+                "description": "Цвет растения: Сине-зеленый. Цвет цветка: Розово-лососевый. Высота: 30-40 см. Время цветения: Май-июль. Уход: Умеренный полив, рыхлая плодородная почва, зимостойкость до -35°C, деление каждые 3-4 года. Приморский климат: Да, переносит солевые брызги. Аромат: Легкий медовый аромат цветков",
+                "short_description": "Цвет растения: Сине-зеленый. Цвет цветка: Розово-лососевый. Высота: 30-40 см. Время цветения: Май-июль.",
+                "category": "Медоносные растения",
+                "light_requirements": "shade",
+                "is_medicinal": false,
+                "is_honey_plant": true,
+                "is_evergreen": false,
+                "is_roof_suitable": false,
+                "is_ground_cover": false,
+                "has_aroma": true,
+                "is_floristic_cut": false,
+                "is_dried_flower": false,
+                "coastal_climate_resistant": true,
+                "height_min": 30,
+                "height_max": 40,
+                "width_min": 20,
+                "width_max": 30,
+                "flowering_period": "Май-июль",
+                "flower_color": "Розово-лососевый",
+                "plant_color": "Сине-зеленый",
+                "watering_frequency": "moderate",
+                "soil_type": "any",
+                "frost_resistance": "excellent",
+                "price": 250,
+                "wholesale_price": 200,
+                "stock_quantity": 50,
+                "is_available": true,
+                "image_url": "/assets/plants/akvilegiya-obyknovennaya-clementinesalmon-rose.jpg",
+                "characteristics": {
+                    "aroma": "Легкий медовый аромат цветков",
+                    "coastal_climate": true,
+                    "winter_hardiness": "-35°C"
+                }
+            },
+            {
+                "id": 2,
+                "name": "Душица обыкновенная \"Фея\"",
+                "description": "Многолетнее ароматное лекарственное растение. Высота: 20-30 см. Цветение: Июль-август. Цветки: Мелкие розово-лиловые. Аромат: Сильный пряный аромат листьев и цветков. Уход: Неприхотливое, засухоустойчивое растение. Использование: Лекарственное, пряно-ароматическое, медоносное.",
+                "short_description": "Многолетнее ароматное лекарственное растение. Высота: 20-30 см. Цветение: Июль-август.",
+                "category": "Ароматные растения",
+                "light_requirements": "sun",
+                "is_medicinal": true,
+                "is_honey_plant": true,
+                "is_evergreen": false,
+                "is_roof_suitable": true,
+                "is_ground_cover": true,
+                "has_aroma": true,
+                "is_floristic_cut": false,
+                "is_dried_flower": false,
+                "coastal_climate_resistant": true,
+                "height_min": 20,
+                "height_max": 30,
+                "width_min": 15,
+                "width_max": 25,
+                "flowering_period": "Июль-август",
+                "flower_color": "Розово-лиловый",
+                "plant_color": "Зеленый",
+                "watering_frequency": "rare",
+                "soil_type": "any",
+                "frost_resistance": "excellent",
+                "price": 180,
+                "wholesale_price": 150,
+                "stock_quantity": 100,
+                "is_available": true,
+                "image_url": "/assets/plants/dushitsa-obyknovennaya-feya.jpg",
+                "characteristics": {
+                    "aroma": "Сильный пряный аромат листьев и цветков",
+                    "medicinal": true,
+                    "drought_resistant": true
+                }
+            },
+            {
+                "id": 3,
+                "name": "Молиния голубая \"Heidebraut\"",
+                "description": "Декоративная трава с красивыми соцветиями. Высота: 60-80 см. Цветение: Август-сентябрь. Цветки: Мелкие серебристые метелки. Листва: Зеленая, осенью золотистая. Уход: Неприхотливое, зимостойкое растение. Использование: Декоративное, для сухих букетов.",
+                "short_description": "Декоративная трава с красивыми соцветиями. Высота: 60-80 см. Цветение: Август-сентябрь.",
+                "category": "Декоративные травы",
+                "light_requirements": "partial_shade",
+                "is_medicinal": false,
+                "is_honey_plant": false,
+                "is_evergreen": false,
+                "is_roof_suitable": false,
+                "is_ground_cover": false,
+                "has_aroma": false,
+                "is_floristic_cut": true,
+                "is_dried_flower": true,
+                "coastal_climate_resistant": true,
+                "height_min": 60,
+                "height_max": 80,
+                "width_min": 40,
+                "width_max": 50,
+                "flowering_period": "Август-сентябрь",
+                "flower_color": "Серебристый",
+                "plant_color": "Зеленый, осенью золотистый",
+                "watering_frequency": "moderate",
+                "soil_type": "any",
+                "frost_resistance": "excellent",
+                "price": 320,
+                "wholesale_price": 280,
+                "stock_quantity": 25,
+                "is_available": true,
+                "image_url": "/assets/plants/moliniya-golubaya-heidebraut.jpg",
+                "characteristics": {
+                    "decorative": true,
+                    "dried_flower": true,
+                    "winter_hardiness": "excellent"
+                }
+            },
+            {
+                "id": 4,
+                "name": "Аквилегия обыкновенная \"CLEMENTINE\"(SALMON CREAM)",
+                "description": "Цвет растения: Сине-зеленый. Цвет цветка: Лососево-кремовый. Высота: 30-40 см. Время цветения: Май-июль. Уход: Умеренный полив, рыхлая плодородная почва, зимостойкость до -35°C.",
+                "short_description": "Цвет растения: Сине-зеленый. Цвет цветка: Лососево-кремовый. Высота: 30-40 см. Время цветения: Май-июль.",
+                "category": "Многолетники",
+                "light_requirements": "shade",
+                "is_medicinal": false,
+                "is_honey_plant": true,
+                "is_evergreen": false,
+                "is_roof_suitable": false,
+                "is_ground_cover": false,
+                "has_aroma": true,
+                "is_floristic_cut": false,
+                "is_dried_flower": false,
+                "coastal_climate_resistant": true,
+                "height_min": 30,
+                "height_max": 40,
+                "width_min": 20,
+                "width_max": 30,
+                "flowering_period": "Май-июль",
+                "flower_color": "Лососево-кремовый",
+                "plant_color": "Сине-зеленый",
+                "watering_frequency": "moderate",
+                "soil_type": "any",
+                "frost_resistance": "excellent",
+                "price": 250,
+                "wholesale_price": 200,
+                "stock_quantity": 35,
+                "is_available": true,
+                "image_url": "/assets/plants/akvilegiya-obyknovennaya-clementinesalmon-cream.jpg",
+                "characteristics": {
+                    "aroma": "Легкий медовый аромат",
+                    "winter_hardiness": "-35°C"
+                }
+            },
+            {
+                "id": 5,
+                "name": "Аквилегия голубая с белым (A.caerulea)",
+                "description": "Цвет растения: Сине-зеленый. Цвет цветка: Голубой с белым. Высота: 40-60 см. Время цветения: Май-июнь. Уход: Умеренный полив, рыхлая плодородная почва, зимостойкость до -35°C.",
+                "short_description": "Цвет растения: Сине-зеленый. Цвет цветка: Голубой с белым. Высота: 40-60 см. Время цветения: Май-июнь.",
+                "category": "Многолетники",
+                "light_requirements": "shade",
+                "is_medicinal": false,
+                "is_honey_plant": true,
+                "is_evergreen": false,
+                "is_roof_suitable": false,
+                "is_ground_cover": false,
+                "has_aroma": true,
+                "is_floristic_cut": false,
+                "is_dried_flower": false,
+                "coastal_climate_resistant": true,
+                "height_min": 40,
+                "height_max": 60,
+                "width_min": 25,
+                "width_max": 35,
+                "flowering_period": "Май-июнь",
+                "flower_color": "Голубой с белым",
+                "plant_color": "Сине-зеленый",
+                "watering_frequency": "moderate",
+                "soil_type": "any",
+                "frost_resistance": "excellent",
+                "price": 280,
+                "wholesale_price": 230,
+                "stock_quantity": 40,
+                "is_available": true,
+                "image_url": "/assets/plants/akvilegiya-golubaya-s-belym-acaerulea.jpg",
+                "characteristics": {
+                    "aroma": "Легкий медовый аромат",
+                    "winter_hardiness": "-35°C"
+                }
+            }
+        ];
+
+        const CATEGORIES_DATA = [
+            {"id": 1, "name": "Медоносные растения", "description": "Категория растений: Медоносные растения", "slug": "медоносные-растения"},
+            {"id": 2, "name": "Растения для крыш", "description": "Категория растений: Растения для крыш", "slug": "растения-для-крыш"},
+            {"id": 3, "name": "Многолетники", "description": "Категория растений: Многолетники", "slug": "многолетники"},
+            {"id": 4, "name": "Вечнозеленые растения", "description": "Категория растений: Вечнозеленые растения", "slug": "вечнозеленые-растения"},
+            {"id": 5, "name": "Ароматные растения", "description": "Категория растений: Ароматные растения", "slug": "ароматные-растения"},
+            {"id": 6, "name": "Декоративные травы", "description": "Категория растений: Декоративные травы", "slug": "декоративные-травы"}
+        ];
+
         let currentPage = 1;
         let totalPages = 1;
         let currentFilters = {};
@@ -1280,109 +1475,88 @@
         });
 
         // Загрузка статистики
-        async function loadStats() {
-            try {
-                const response = await fetch(`${API_BASE}/plants.json`);
-                const plants = await response.json();
-                
-                const stats = {
-                    total_plants: plants.length,
-                    honey_plants: plants.filter(p => p.is_honey_plant).length,
-                    evergreen_plants: plants.filter(p => p.is_evergreen).length,
-                    roof_suitable: plants.filter(p => p.is_roof_suitable).length,
-                    aromatic_plants: plants.filter(p => p.has_aroma).length,
-                    floristic_cut: plants.filter(p => p.is_floristic_cut).length
-                };
-                
-                document.getElementById('stats').innerHTML = `
-                    <div class="stat-card" data-type="total">
-                        <div class="stat-number">${stats.total_plants}</div>
-                        <div class="stat-label">Растений в каталоге</div>
-                    </div>
-                    <div class="stat-card" data-type="honey">
-                        <div class="stat-number">${stats.honey_plants}</div>
-                        <div class="stat-label">Медоносные</div>
-                    </div>
-                    <div class="stat-card" data-type="evergreen">
-                        <div class="stat-number">${stats.evergreen_plants}</div>
-                        <div class="stat-label">Вечнозеленые</div>
-                    </div>
-                    <div class="stat-card" data-type="roof">
-                        <div class="stat-number">${stats.roof_suitable}</div>
-                        <div class="stat-label">Для крыш</div>
-                    </div>
-                    <div class="stat-card" data-type="aromatic">
-                        <div class="stat-number">${stats.aromatic_plants}</div>
-                        <div class="stat-label">Ароматные</div>
-                    </div>
-                    <div class="stat-card" data-type="floristic">
-                        <div class="stat-number">${stats.floristic_cut}</div>
-                        <div class="stat-label">Для флористики</div>
-                    </div>
-                `;
-            } catch (error) {
-                console.error('Ошибка загрузки статистики:', error);
-            }
+        function loadStats() {
+            const stats = {
+                total_plants: PLANTS_DATA.length,
+                honey_plants: PLANTS_DATA.filter(p => p.is_honey_plant).length,
+                evergreen_plants: PLANTS_DATA.filter(p => p.is_evergreen).length,
+                roof_suitable: PLANTS_DATA.filter(p => p.is_roof_suitable).length,
+                aromatic_plants: PLANTS_DATA.filter(p => p.has_aroma).length,
+                floristic_cut: PLANTS_DATA.filter(p => p.is_floristic_cut).length
+            };
+            
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card" data-type="total">
+                    <div class="stat-number">${stats.total_plants}</div>
+                    <div class="stat-label">Растений в каталоге</div>
+                </div>
+                <div class="stat-card" data-type="honey">
+                    <div class="stat-number">${stats.honey_plants}</div>
+                    <div class="stat-label">Медоносные</div>
+                </div>
+                <div class="stat-card" data-type="evergreen">
+                    <div class="stat-number">${stats.evergreen_plants}</div>
+                    <div class="stat-label">Вечнозеленые</div>
+                </div>
+                <div class="stat-card" data-type="roof">
+                    <div class="stat-number">${stats.roof_suitable}</div>
+                    <div class="stat-label">Для крыш</div>
+                </div>
+                <div class="stat-card" data-type="aromatic">
+                    <div class="stat-number">${stats.aromatic_plants}</div>
+                    <div class="stat-label">Ароматные</div>
+                </div>
+                <div class="stat-card" data-type="floristic">
+                    <div class="stat-number">${stats.floristic_cut}</div>
+                    <div class="stat-label">Для флористики</div>
+                </div>
+            `;
         }
 
         // Загрузка категорий
-        async function loadCategories() {
-            try {
-                const response = await fetch(`${API_BASE}/categories.json`);
-                const categories = await response.json();
-                
-                const categorySelect = document.getElementById('category');
-                categories.forEach(category => {
-                    const option = document.createElement('option');
-                    option.value = category.name;
-                    option.textContent = category.name;
-                    categorySelect.appendChild(option);
-                });
-            } catch (error) {
-                console.error('Ошибка загрузки категорий:', error);
-            }
+        function loadCategories() {
+            const categorySelect = document.getElementById('category');
+            CATEGORIES_DATA.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.name;
+                option.textContent = category.name;
+                categorySelect.appendChild(option);
+            });
         }
 
         // Загрузка растений
-        async function loadPlants() {
-            try {
-                const response = await fetch(`${API_BASE}/plants.json`);
-                let plants = await response.json();
-                
-                // Применяем фильтры
-                if (currentFilters.search) {
-                    const search = currentFilters.search.toLowerCase();
-                    plants = plants.filter(p => 
-                        p.name.toLowerCase().includes(search) || 
-                        p.description.toLowerCase().includes(search)
-                    );
-                }
-                
-                if (currentFilters.category_id) {
-                    plants = plants.filter(p => p.category === currentFilters.category_id);
-                }
-                
-                // Пагинация
-                const limit = 12;
-                const total = plants.length;
-                const pages = Math.ceil(total / limit);
-                const startIndex = (currentPage - 1) * limit;
-                const endIndex = startIndex + limit;
-                const paginatedPlants = plants.slice(startIndex, endIndex);
-                
-                displayPlants(paginatedPlants);
-                updatePagination({
-                    page: currentPage,
-                    limit: limit,
-                    total: total,
-                    pages: pages
-                });
-                updatePlantsCount(total);
-                
-            } catch (error) {
-                console.error('Ошибка загрузки растений:', error);
-                showError('Ошибка подключения к серверу');
+        function loadPlants() {
+            let plants = [...PLANTS_DATA];
+            
+            // Применяем фильтры
+            if (currentFilters.search) {
+                const search = currentFilters.search.toLowerCase();
+                plants = plants.filter(p => 
+                    p.name.toLowerCase().includes(search) || 
+                    p.description.toLowerCase().includes(search)
+                );
             }
+            
+            if (currentFilters.category_id) {
+                plants = plants.filter(p => p.category === currentFilters.category_id);
+            }
+            
+            // Пагинация
+            const limit = 12;
+            const total = plants.length;
+            const pages = Math.ceil(total / limit);
+            const startIndex = (currentPage - 1) * limit;
+            const endIndex = startIndex + limit;
+            const paginatedPlants = plants.slice(startIndex, endIndex);
+            
+            displayPlants(paginatedPlants);
+            updatePagination({
+                page: currentPage,
+                limit: limit,
+                total: total,
+                pages: pages
+            });
+            updatePlantsCount(total);
         }
 
         // Отображение растений
@@ -1460,20 +1634,13 @@
         }
 
         // Просмотр растения
-        async function viewPlant(id) {
-            try {
-                const response = await fetch(`${API_BASE}/plants.json`);
-                const plants = await response.json();
-                const plant = plants.find(p => p.id === id);
-                
-                if (plant) {
-                    showPlantModal(plant);
-                } else {
-                    showError('Растение не найдено');
-                }
-            } catch (error) {
-                console.error('Ошибка загрузки растения:', error);
-                showError('Ошибка загрузки растения');
+        function viewPlant(id) {
+            const plant = PLANTS_DATA.find(p => p.id === id);
+            
+            if (plant) {
+                showPlantModal(plant);
+            } else {
+                showError('Растение не найдено');
             }
         }
 
@@ -1642,10 +1809,10 @@
         });
 
         // Инициализация
-        document.addEventListener('DOMContentLoaded', async () => {
-            await loadStats();
-            await loadCategories();
-            await loadPlants();
+        document.addEventListener('DOMContentLoaded', () => {
+            loadStats();
+            loadCategories();
+            loadPlants();
         });
     </script>
 </body>
