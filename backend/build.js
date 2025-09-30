@@ -9,7 +9,7 @@ if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
 
-// Copy and convert TypeScript files
+// Simple approach: copy files and fix only critical issues
 const srcDir = path.join(__dirname, 'src');
 
 function copyDir(src, dest) {
@@ -28,14 +28,14 @@ function copyDir(src, dest) {
     } else if (file.endsWith('.ts')) {
       const content = fs.readFileSync(srcPath, 'utf8');
       
-      // Convert TypeScript to JavaScript
+      // Minimal conversion - just fix the most critical issues
       let jsContent = content
-        // Fix import statements
+        // Fix express-rate-limit import
+        .replace(/import\s+rateLimit\s+from\s+['"]express-rate-limit['"];?/g, "const rateLimit = require('express-rate-limit');")
         .replace(/import\s+(\w+)\s+from\s+['"]([^'"]+)['"];?/g, "const $1 = require('$2');")
         .replace(/import\s*{\s*([^}]+)\s*}\s*from\s+['"]([^'"]+)['"];?/g, "const { $1 } = require('$2');")
-        .replace(/import\s*\*\s*as\s+(\w+)\s+from\s+['"]([^'"]+)['"];?/g, "const $1 = require('$2');")
         
-        // Remove type annotations
+        // Remove type annotations (simple ones)
         .replace(/:\s*string/g, '')
         .replace(/:\s*number/g, '')
         .replace(/:\s*boolean/g, '')
@@ -43,27 +43,13 @@ function copyDir(src, dest) {
         .replace(/:\s*object/g, '')
         .replace(/:\s*Array<[^>]+>/g, '')
         .replace(/:\s*\w+\[\]/g, '')
-        .replace(/:\s*{[^}]*}/g, '')
-        
-        // Remove interface and type declarations
-        .replace(/interface\s+\w+\s*{[^}]*}/g, '')
-        .replace(/type\s+\w+\s*=\s*[^;]+;/g, '')
         
         // Remove export statements
         .replace(/export\s+/g, '')
         
-        // Fix variable names with hyphens
-        .replace(/const\s+([a-zA-Z][a-zA-Z0-9-]*)\s*=/g, (match, varName) => {
-          const cleanName = varName.replace(/-/g, '_');
-          return `const ${cleanName} =`;
-        })
-        .replace(/require\('([^']+)'\)/g, (match, moduleName) => {
-          if (moduleName.includes('-')) {
-            const cleanModule = moduleName.replace(/-/g, '_');
-            return `require('${moduleName}')`;
-          }
-          return match;
-        });
+        // Remove interface declarations
+        .replace(/interface\s+\w+\s*{[^}]*}/g, '')
+        .replace(/type\s+\w+\s*=\s*[^;]+;/g, '');
       
       // Write the converted file
       fs.writeFileSync(destPath.replace('.ts', '.js'), jsContent);
