@@ -1,0 +1,24 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон -->
+  <rect width="200" height="60" fill="#f0f4f0" rx="8"/>
+  
+  <!-- Листья -->
+  <g transform="translate(10, 15)">
+    <!-- Основной лист -->
+    <path d="M15 5 Q25 0 35 5 Q30 15 25 20 Q20 25 15 20 Q10 15 15 5 Z" fill="#4a7c59"/>
+    <path d="M15 5 Q20 0 25 5 Q22 10 20 12 Q18 14 15 12 Q12 10 15 5 Z" fill="#6b8e23"/>
+    
+    <!-- Второй лист -->
+    <path d="M25 8 Q35 3 45 8 Q40 18 35 23 Q30 28 25 23 Q20 18 25 8 Z" fill="#4a7c59" opacity="0.8"/>
+    
+    <!-- Третий лист -->
+    <path d="M5 12 Q15 7 25 12 Q20 22 15 27 Q10 32 5 27 Q0 22 5 12 Z" fill="#4a7c59" opacity="0.6"/>
+  </g>
+  
+  <!-- Текст -->
+  <text x="50" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#2d5016">Питомник</text>
+  <text x="50" y="45" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#6b8e23">МЯТА</text>
+  
+  <!-- Подзаголовок -->
+  <text x="50" y="55" font-family="Inter, sans-serif" font-size="10" fill="#666">Многолетние цветы и травы</text>
+</svg>
