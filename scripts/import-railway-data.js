@@ -2,8 +2,8 @@ const { Pool } = require('pg');
 const fs = require('fs');
 const path = require('path');
 
-// Railway DATABASE_URL
-const DATABASE_URL = 'postgresql://postgres:TDQsyKKXQVdhebrKbrFlCyLxcwVwIhWY@postgres.railway.internal:5432/railway';
+// Railway DATABASE_URL (публичный)
+const DATABASE_URL = 'postgresql://postgres:TDQsyKKXQVdhebrKbrFlCyLxcwVwIhWY@gondola.proxy.rlwy.net:43679/railway';
 
 console.log('🌱 Импорт данных растений в Railway PostgreSQL...');
 console.log('DATABASE_URL:', DATABASE_URL.replace(/\/\/.*@/, '//***:***@')); // Скрываем пароль
@@ -14,7 +14,7 @@ async function importData() {
   try {
     // 1. Создаем таблицы
     console.log('📋 Создание таблиц...');
-    const schemaPath = path.join(__dirname, '..', 'database', 'schema.sql');
+    const schemaPath = path.join(__dirname, '..', 'database', 'schema-railway.sql');
     const schema = fs.readFileSync(schemaPath, 'utf8');
     
     await pool.query(schema);
