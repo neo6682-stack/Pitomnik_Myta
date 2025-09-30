@@ -49,7 +49,17 @@ function copyDir(src, dest) {
         
         // Remove interface declarations
         .replace(/interface\s+\w+\s*{[^}]*}/g, '')
-        .replace(/type\s+\w+\s*=\s*[^;]+;/g, '');
+        .replace(/type\s+\w+\s*=\s*[^;]+;/g, '')
+        
+        // Fix require paths to use root node_modules
+        .replace(/require\('([^']+)'\)/g, (match, moduleName) => {
+          // For modules that should be in root node_modules
+          const rootModules = ['express', 'cors', 'helmet', 'morgan', 'express-rate-limit', 'bcryptjs', 'joi', 'jsonwebtoken', 'multer', 'pg', 'dotenv'];
+          if (rootModules.includes(moduleName)) {
+            return `require('../../node_modules/${moduleName}')`;
+          }
+          return match;
+        });
       
       // Write the converted file
       fs.writeFileSync(destPath.replace('.ts', '.js'), jsContent);
