@@ -93,4 +93,14 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
   console.log(`📚 API документация: http://localhost:${PORT}/api`);
   console.log(`🌱 Каталог растений: http://localhost:${PORT}/api/plants`);
+  console.log(`✅ Приложение готово к работе!`);
+});
+
+// Добавляем обработку ошибок
+process.on('uncaughtException', (error) => {
+  console.error('❌ Uncaught Exception:', error);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
 });

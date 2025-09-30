@@ -4,8 +4,8 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "npm run build && node index.js",
-    "healthcheckPath": "/api/health",
+    "startCommand": "node index.js",
+    "healthcheckPath": "/",
     "healthcheckTimeout": 600,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
