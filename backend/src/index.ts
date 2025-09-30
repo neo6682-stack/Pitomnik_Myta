@@ -9,7 +9,6 @@ import plantsRouter from './routes/plants';
 import categoriesRouter from './routes/categories';
 import { errorHandler, notFound } from './middleware/errorHandler';
 import { connectDB } from './database/connection';
-import { initDatabase } from './database/init';
 
 dotenv.config();
 
@@ -18,9 +17,6 @@ const PORT = process.env.PORT || 3001;
 
 // Подключение к базе данных
 connectDB();
-
-// Инициализация базы данных (создание таблиц)
-initDatabase().catch(console.error);
 
 // Middleware
 app.use(helmet());
