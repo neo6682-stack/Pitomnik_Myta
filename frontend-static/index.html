@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Питомник МЯТА - Многолетние цветы и травы | Ростовская область</title>
+    <meta name="description" content="Питомник многолетних цветов и трав МЯТА в Ростовской области. Качественные растения для сада: медоносные, вечнозеленые, ароматные. Доставка по России.">
+    <style>
+        /* Font Face */
+        @font-face {
+            font-family: 'Noteworthy';
+            src: url('fonts/Noteworthy.ttc') format('truetype-collection');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Noteworthy';
+            src: url('fonts/Noteworthy.ttc') format('truetype-collection');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 2% auto;
+            padding: 0;
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: var(--white);
+            padding: 24px;
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .modal-category {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--light-green) 0%, #e8f5e8 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: var(--accent-green);
+            margin-bottom: 24px;
+        }
+
+        .modal-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        .modal-characteristics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .characteristic-card {
+            background: var(--light-green);
+            padding: 16px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .characteristic-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .characteristic-label {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 4px;
+        }
+
+        .characteristic-value {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .modal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .detail-section h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .detail-label {
+            font-weight: 500;
+            color: var(--text-gray);
+        }
+
+        .detail-value {
+            color: var(--text-dark);
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            background: var(--light-green);
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        }
+
+        .modal-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .modal-wholesale {
+            font-size: 16px;
+            color: var(--text-gray);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-modal {
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-modal-primary {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-modal-primary:hover {
+            background: var(--secondary-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-modal-secondary {
+            background: var(--white);
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-modal-secondary:hover {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Responsive Modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+            }
+            
+            .modal-characteristics {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        :root {
+            --primary-green: #2d5016;
+            --secondary-green: #4a7c59;
+            --accent-green: #6b8e23;
+            --light-green: #f0f4f0;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --border-light: #e5e5e5;
+            --white: #ffffff;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 16px rgba(0,0,0,0.15);
+            --radius: 8px;
+            --radius-lg: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            background-image: url('assets/logo-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.31);
+            z-index: 1;
+        }
+
+        .header-top,
+        .header-main,
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-top {
+            background: #a8d5a8;
+            color: var(--text-dark);
+            padding: 8px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .header-main {
+            padding: 0 20px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-green);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 800;
+        }
+
+        .logo-image {
+            height: 192px;
+            width: 192px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-family: 'Noteworthy', 'Georgia', 'Times New Roman', serif;
+            font-weight: 650;
+            font-size: 23.04px;
+            transition: color 0.3s ease;
+            position: relative;
+            text-shadow: 0 3px 6px rgba(255, 255, 255, 1), 0 2px 4px rgba(255, 255, 255, 1), 0 1px 2px rgba(255, 255, 255, 1);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        /* Header scroll states */
+        .header.scrolled {
+            transform: scaleY(0.6);
+            transform-origin: top;
+        }
+
+        .header.scrolled .header-top {
+            display: none;
+        }
+
+        .header.scrolled .logo-image {
+            transform: scale(0.6) scaleY(1.67);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .nav a {
+            transform: scaleY(1.67);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .search-box {
+            transform: scaleY(1.67);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .cart-btn {
+            transform: scaleY(1.67);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .header-content {
+            padding: 10px 0;
+        }
+
+        .header.scrolled::before {
+            transform: scaleY(1.67);
+            transform-origin: top;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            padding: 12px 19px 12px 48px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            width: 360px;
+            font-size: 16.8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 16.8px;
+        }
+
+        .cart-btn {
+            background: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            font-size: 16.8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-btn:hover {
+            background: var(--secondary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-green) 0%, #e8f5e8 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            margin-bottom: 30px;
+        }
+
+        .hero-title-main {
+            font-family: 'Noteworthy', 'Georgia', 'Times New Roman', serif;
+            font-size: 48px;
+            font-weight: normal;
+            color: var(--primary-green);
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .hero-title-accent {
+            font-family: 'Noteworthy', 'Georgia', 'Times New Roman', serif;
+            font-size: 56px;
+            font-weight: bold;
+            color: var(--accent-green);
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-style: italic;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 60px 20px;
+        }
+
+        .stats-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px 16px;
+            background: var(--light-green);
+            border-radius: var(--radius-lg);
+            transition: transform 0.3s ease;
+            min-width: 140px;
+            flex: 1;
+            max-width: 160px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.55);
+            z-index: 1;
+        }
+
+        .stat-card .stat-number,
+        .stat-card .stat-label {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card .stat-number {
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .stat-card .stat-label {
+            font-weight: 700;
+            color: var(--primary-green);
+            font-size: 15.4px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card[data-type="total"] {
+            background-image: url('assets/total-plants.jpg');
+        }
+
+        .stat-card[data-type="honey"] {
+            background-image: url('assets/honey-plants.jpg');
+        }
+
+        .stat-card[data-type="evergreen"] {
+            background-image: url('assets/evergreen-plants.jpg');
+        }
+
+        .stat-card[data-type="roof"] {
+            background-image: url('assets/roof-plants.jpg');
+        }
+
+        .stat-card[data-type="aromatic"] {
+            background-image: url('assets/aromatic-plants.jpg');
+        }
+
+        .stat-card[data-type="floristic"] {
+            background-image: url('assets/floristic-plants.jpg');
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* Filters Section */
+        .filters {
+            background: var(--white);
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .filters-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filters h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 12px 16px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        /* Plants Grid */
+        .plants {
+            padding: 60px 20px;
+            background: var(--light-green);
+        }
+
+        .plants-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plants-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .plants-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .plants-count {
+            color: var(--text-gray);
+            font-size: 16px;
+        }
+
+        .plants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .plant-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .plant-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .plant-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--light-green) 0%, #e8f5e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--accent-green);
+        }
+
+        .plant-content {
+            padding: 20px;
+        }
+
+        .plant-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .plant-category {
+            font-size: 14px;
+            color: var(--accent-green);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .plant-description {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.5;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .plant-characteristics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .characteristic {
+            background: var(--light-green);
+            color: var(--primary-green);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .plant-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .plant-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .plant-stock {
+            font-size: 12px;
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px;
+        }
+
+        .pagination button {
+            padding: 10px 16px;
+            border: 1px solid var(--border-light);
+            background: var(--white);
+            color: var(--text-dark);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .pagination button:hover {
+            background: var(--light-green);
+            border-color: var(--primary-green);
+        }
+
+        .pagination button.active {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        .footer {
+            background: #a8d5a8;
+            color: var(--text-dark);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(0, 0, 0, 0.7);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--text-dark);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 18px;
+            color: var(--text-gray);
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-light);
+            border-top: 2px solid var(--primary-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Error */
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 16px;
+            border-radius: var(--radius);
+            margin: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .search-input {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .plants-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 16px;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .plants-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            Бесплатная доставка от 5000₽ | +7 918 55 28 423 | Mytapitomnik@mail.ru
+        </div>
+        <div class="header-main">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/logo.png" alt="Питомник МЯТА" class="logo-image">
+                </a>
+                
+                <nav class="nav">
+                    <a href="#plants" class="nav-link">Каталог</a>
+                    <a href="#sets" class="nav-link">Наборы</a>
+                    <a href="#about" class="nav-link">О нас</a>
+                    <a href="#contact" class="nav-link">Контакты</a>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search" class="search-input" placeholder="Поиск растений...">
+                    </div>
+                    <button class="cart-btn">🛒 Корзина (0)</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-title">
+                <div class="hero-title-main">Питомник</div>
+                <div class="hero-title-accent">МЯТА</div>
+            </div>
+            <h1>Многолетние цветы и травы</h1>
+            <p>Качественные растения для вашего сада от питомника МЯТА в Ростовской области</p>
+            <div class="hero-cta">
+                <a href="#plants" class="btn btn-primary">Смотреть каталог</a>
+                <a href="#sets" class="btn btn-secondary">Наборы растений</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-content">
+            <div class="stats-grid" id="stats">
+                <!-- Статистика будет загружена динамически -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <div class="filters-content">
+            <h2>🔍 Найти идеальные растения</h2>
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="category">Категория</label>
+                    <select id="category">
+                        <option value="">Все категории</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="light">Освещение</label>
+                    <select id="light">
+                        <option value="">Любое</option>
+                        <option value="sun">☀️ Солнце</option>
+                        <option value="partial_shade">🌤️ Полутень</option>
+                        <option value="shade">🌑 Тень</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="minPrice">Цена от (₽)</label>
+                    <input type="number" id="minPrice" placeholder="0" min="0">
+                </div>
+                <div class="filter-group">
+                    <label for="maxPrice">Цена до (₽)</label>
+                    <input type="number" id="maxPrice" placeholder="1000" min="0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plants Section -->
+    <section class="plants" id="plants">
+        <div class="plants-content">
+            <div class="plants-header">
+                <h2 class="plants-title">Наши растения</h2>
+                <div class="plants-count" id="plantsCount">Загрузка...</div>
+            </div>
+            
+            <div id="plantsGrid" class="plants-grid">
+                <div class="loading">Загрузка каталога растений...</div>
+            </div>
+
+            <div id="pagination" class="pagination">
+                <!-- Пагинация будет загружена динамически -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Питомник МЯТА</h3>
+                <p>Специализируемся на выращивании многолетних цветов и трав. Качественные растения для вашего сада.</p>
+                <p>📍 Ростовская область, Неклиновский район, село Николаевка</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>📞 +7 918 55 28 423</p>
+                <p>👤 Ирина Леонидовна</p>
+                <p>📧 Mytapitomnik@mail.ru</p>
+            </div>
+            <div class="footer-section">
+                <h3>Каталог</h3>
+                <p><a href="#plants">Все растения</a></p>
+                <p><a href="#sets">Наборы растений</a></p>
+                <p><a href="#sets">Медоносные растения</a></p>
+                <p><a href="#sets">Для крыш</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Услуги</h3>
+                <p><a href="#contact">Консультации</a></p>
+                <p><a href="#contact">Проектирование</a></p>
+                <p><a href="#contact">Доставка</a></p>
+                <p><a href="#contact">B2B поставки</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Питомник МЯТА. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Plant Details -->
+    <div id="plantModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <div class="modal-title" id="modalTitle"></div>
+                <div class="modal-category" id="modalCategory"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image" id="modalImage">
+                    <img id="modalPlantImage" src="assets/logo.png" alt="Растение" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius);">
+                </div>
+                <div class="modal-description" id="modalDescription"></div>
+                
+                <div class="modal-characteristics" id="modalCharacteristics">
+                    <!-- Characteristics will be loaded dynamically -->
+                </div>
+                
+                <div class="modal-details">
+                    <div class="detail-section">
+                        <h4>Размеры</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Высота:</span>
+                            <span class="detail-value" id="modalHeight"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Ширина:</span>
+                            <span class="detail-value" id="modalWidth"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Цветение</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Период цветения:</span>
+                            <span class="detail-value" id="modalFloweringPeriod"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Цвет цветка:</span>
+                            <span class="detail-value" id="modalFlowerColor"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Цвет растения:</span>
+                            <span class="detail-value" id="modalPlantColor"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>Уход</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Полив:</span>
+                            <span class="detail-value" id="modalWatering"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Почва:</span>
+                            <span class="detail-value" id="modalSoil"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Морозостойкость:</span>
+                            <span class="detail-value" id="modalFrost"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div>
+                    <div class="modal-price" id="modalPrice"></div>
+                    <div class="modal-wholesale" id="modalWholesale"></div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-modal btn-modal-secondary" onclick="addToWishlist()">В избранное</button>
+                    <button class="btn-modal btn-modal-primary" onclick="addToCart()">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.hostname === 'localhost' 
+            ? 'http://localhost:3001/api' 
+            : 'https://pitomnik-myta-backend.railway.app/api';
+        let currentPage = 1;
+        let totalPages = 1;
+        let currentFilters = {};
+
+        // Header scroll functionality
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Загрузка статистики
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE}/plants/statistics`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const stats = data.data;
+                    document.getElementById('stats').innerHTML = `
+                        <div class="stat-card" data-type="total">
+                            <div class="stat-number">${stats.total_plants}</div>
+                            <div class="stat-label">Растений в каталоге</div>
+                        </div>
+                        <div class="stat-card" data-type="honey">
+                            <div class="stat-number">${stats.honey_plants}</div>
+                            <div class="stat-label">Медоносные</div>
+                        </div>
+                        <div class="stat-card" data-type="evergreen">
+                            <div class="stat-number">${stats.evergreen_plants}</div>
+                            <div class="stat-label">Вечнозеленые</div>
+                        </div>
+                        <div class="stat-card" data-type="roof">
+                            <div class="stat-number">${stats.roof_suitable}</div>
+                            <div class="stat-label">Для крыш</div>
+                        </div>
+                        <div class="stat-card" data-type="aromatic">
+                            <div class="stat-number">${stats.aromatic_plants}</div>
+                            <div class="stat-label">Ароматные</div>
+                        </div>
+                        <div class="stat-card" data-type="floristic">
+                            <div class="stat-number">${stats.floristic_cut}</div>
+                            <div class="stat-label">Для флористики</div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки статистики:', error);
+            }
+        }
+
+        // Загрузка категорий
+        async function loadCategories() {
+            try {
+                const response = await fetch(`${API_BASE}/categories`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const categorySelect = document.getElementById('category');
+                    data.data.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category.id;
+                        option.textContent = category.name;
+                        categorySelect.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки категорий:', error);
+            }
+        }
+
+        // Загрузка растений
+        async function loadPlants() {
+            try {
+                const params = new URLSearchParams({
+                    page: currentPage,
+                    limit: 12,
+                    ...currentFilters
+                });
+
+                const response = await fetch(`${API_BASE}/plants?${params}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayPlants(data.data.plants);
+                    updatePagination(data.data.pagination);
+                    updatePlantsCount(data.data.pagination.total);
+                } else {
+                    showError('Ошибка загрузки растений');
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки растений:', error);
+                showError('Ошибка подключения к серверу');
+            }
+        }
+
+        // Отображение растений
+        function displayPlants(plants) {
+            const container = document.getElementById('plantsGrid');
+            
+            if (plants.length === 0) {
+                container.innerHTML = '<div class="loading">Растения не найдены</div>';
+                return;
+            }
+
+            container.innerHTML = plants.map(plant => `
+                <div class="plant-card" onclick="viewPlant(${plant.id})">
+                    <div class="plant-image">
+                        ${plant.image_url ? `<img src="${plant.image_url}" alt="${plant.name}" style="width: 100%; height: 100%; object-fit: cover;">` : '🌱'}
+                    </div>
+                    <div class="plant-content">
+                        <div class="plant-name">${plant.name}</div>
+                        <div class="plant-category">${plant.category_name}</div>
+                        <div class="plant-description">${plant.short_description}</div>
+                        <div class="plant-characteristics">
+                            ${plant.is_honey_plant ? '<span class="characteristic">🍯 Медонос</span>' : ''}
+                            ${plant.is_evergreen ? '<span class="characteristic">🌲 Вечнозеленое</span>' : ''}
+                            ${plant.is_roof_suitable ? '<span class="characteristic">🏠 Для крыш</span>' : ''}
+                            ${plant.is_ground_cover ? '<span class="characteristic">🌿 Почвопокровное</span>' : ''}
+                            ${plant.has_aroma ? '<span class="characteristic">🌸 Ароматное</span>' : ''}
+                            ${plant.is_floristic_cut ? '<span class="characteristic">✂️ Для среза</span>' : ''}
+                            ${plant.is_dried_flower ? '<span class="characteristic">🌾 Сухоцвет</span>' : ''}
+                            ${plant.coastal_climate_resistant ? '<span class="characteristic">🌊 Приморский климат</span>' : ''}
+                        </div>
+                        <div class="plant-footer">
+                            <div class="plant-price">${plant.price} ₽</div>
+                            <div class="plant-stock">В наличии: ${plant.stock_quantity} шт.</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Обновление пагинации
+        function updatePagination(pagination) {
+            const container = document.getElementById('pagination');
+            totalPages = pagination.pages;
+            
+            let html = '';
+            
+            // Кнопка "Предыдущая"
+            html += `<button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">← Предыдущая</button>`;
+            
+            // Номера страниц
+            const startPage = Math.max(1, currentPage - 2);
+            const endPage = Math.min(totalPages, currentPage + 2);
+            
+            for (let i = startPage; i <= endPage; i++) {
+                html += `<button class="${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+            }
+            
+            // Кнопка "Следующая"
+            html += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Следующая →</button>`;
+            
+            container.innerHTML = html;
+        }
+
+        // Обновление счетчика растений
+        function updatePlantsCount(total) {
+            document.getElementById('plantsCount').textContent = `Найдено: ${total} растений`;
+        }
+
+        // Смена страницы
+        function changePage(page) {
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                loadPlants();
+            }
+        }
+
+        // Просмотр растения
+        async function viewPlant(id) {
+            try {
+                const response = await fetch(`${API_BASE}/plants/${id}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const plant = data.data;
+                    showPlantModal(plant);
+                } else {
+                    showError('Растение не найдено');
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки растения:', error);
+                showError('Ошибка загрузки растения');
+            }
+        }
+
+        // Показать модальное окно с информацией о растении
+        function showPlantModal(plant) {
+            // Заполняем основную информацию
+            document.getElementById('modalTitle').textContent = plant.name;
+            document.getElementById('modalCategory').textContent = plant.category_name;
+            document.getElementById('modalDescription').textContent = plant.description;
+            
+            // Загружаем фотографию растения
+            const modalImage = document.getElementById('modalPlantImage');
+            if (plant.image_url) {
+                modalImage.src = plant.image_url;
+                modalImage.alt = plant.name;
+            } else {
+                modalImage.src = 'assets/logo.png';
+                modalImage.alt = 'Растение';
+            }
+            
+            // Заполняем детали
+            document.getElementById('modalHeight').textContent = 
+                plant.height_min && plant.height_max ? 
+                `${plant.height_min}-${plant.height_max} см` : 
+                'Не указано';
+            
+            document.getElementById('modalWidth').textContent = 
+                plant.width_min && plant.width_max ? 
+                `${plant.width_min}-${plant.width_max} см` : 
+                'Не указано';
+            
+            document.getElementById('modalFloweringPeriod').textContent = 
+                plant.flowering_period || 'Не указано';
+            
+            document.getElementById('modalFlowerColor').textContent = 
+                plant.flower_color || 'Не указано';
+            
+            document.getElementById('modalPlantColor').textContent = 
+                plant.plant_color || 'Не указано';
+            
+            document.getElementById('modalWatering').textContent = 
+                plant.watering_frequency === 'moderate' ? 'Умеренный' : 
+                plant.watering_frequency === 'frequent' ? 'Частый' : 
+                plant.watering_frequency === 'rare' ? 'Редкий' : 'Не указано';
+            
+            document.getElementById('modalSoil').textContent = 
+                plant.soil_type === 'any' ? 'Любая' : 
+                plant.soil_type || 'Не указано';
+            
+            document.getElementById('modalFrost').textContent = 
+                plant.frost_resistance === 'good' ? 'Хорошая' : 
+                plant.frost_resistance === 'excellent' ? 'Отличная' : 
+                plant.frost_resistance === 'poor' ? 'Слабая' : 'Не указано';
+            
+            // Заполняем цены
+            document.getElementById('modalPrice').textContent = `${plant.price} ₽`;
+            document.getElementById('modalWholesale').textContent = `Опт: ${plant.wholesale_price} ₽`;
+            
+            // Заполняем характеристики
+            const characteristics = [];
+            if (plant.is_honey_plant) characteristics.push({icon: '', label: 'Медонос', value: 'Да'});
+            if (plant.is_evergreen) characteristics.push({icon: '', label: 'Вечнозеленое', value: 'Да'});
+            if (plant.is_roof_suitable) characteristics.push({icon: '', label: 'Для крыш', value: 'Да'});
+            if (plant.is_ground_cover) characteristics.push({icon: '', label: 'Почвопокровное', value: 'Да'});
+            if (plant.has_aroma) characteristics.push({icon: '', label: 'Ароматное', value: 'Да'});
+            if (plant.is_floristic_cut) characteristics.push({icon: '', label: 'Для среза', value: 'Да'});
+            if (plant.is_dried_flower) characteristics.push({icon: '', label: 'Сухоцвет', value: 'Да'});
+            if (plant.coastal_climate_resistant) characteristics.push({icon: '', label: 'Приморский климат', value: 'Да'});
+            
+            const characteristicsHtml = characteristics.map(char => `
+                <div class="characteristic-card">
+                    <div class="characteristic-icon">${char.icon}</div>
+                    <div class="characteristic-label">${char.label}</div>
+                    <div class="characteristic-value">${char.value}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('modalCharacteristics').innerHTML = characteristicsHtml;
+            
+            // Показываем модальное окно
+            document.getElementById('plantModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Закрыть модальное окно
+        function closeModal() {
+            document.getElementById('plantModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Добавить в избранное
+        function addToWishlist() {
+            alert('Растение добавлено в избранное!');
+        }
+
+        // Добавить в корзину
+        function addToCart() {
+            alert('Растение добавлено в корзину!');
+        }
+
+        // Закрытие модального окна по клику вне его
+        window.onclick = function(event) {
+            const modal = document.getElementById('plantModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Показать ошибку
+        function showError(message) {
+            document.getElementById('plantsGrid').innerHTML = `<div class="error">${message}</div>`;
+        }
+
+        // Применение фильтров
+        function applyFilters() {
+            currentFilters = {};
+            currentPage = 1;
+            
+            const search = document.getElementById('search').value;
+            const category = document.getElementById('category').value;
+            const light = document.getElementById('light').value;
+            const minPrice = document.getElementById('minPrice').value;
+            const maxPrice = document.getElementById('maxPrice').value;
+            
+            if (search) currentFilters.search = search;
+            if (category) currentFilters.category_id = category;
+            if (light) currentFilters.light_requirements = light;
+            if (minPrice) currentFilters.min_price = minPrice;
+            if (maxPrice) currentFilters.max_price = maxPrice;
+            
+            loadPlants();
+        }
+
+        // Функция debounce для оптимизации поиска
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Обработчики событий
+        document.getElementById('search').addEventListener('input', debounce(applyFilters, 500));
+        document.getElementById('category').addEventListener('change', applyFilters);
+        document.getElementById('light').addEventListener('change', applyFilters);
+        document.getElementById('minPrice').addEventListener('input', debounce(applyFilters, 500));
+        document.getElementById('maxPrice').addEventListener('input', debounce(applyFilters, 500));
+
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadStats();
+            await loadCategories();
+            await loadPlants();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "pitomnik-myta-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Pitomnik Myta",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["plants", "nursery", "catalog"],
+  "author": "Pitomnik Myta",
+  "license": "MIT"
+}
