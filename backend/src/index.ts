@@ -15,8 +15,10 @@ dotenv.config();
 const app = express();
 const PORT = parseInt(process.env.PORT || '8080', 10);
 
-// Подключение к базе данных
-connectDB();
+// Подключение к базе данных (опционально для Railway)
+connectDB().catch(() => {
+  console.log('⚠️ База данных недоступна, продолжаем работу без неё');
+});
 
 // Middleware
 app.use(helmet());

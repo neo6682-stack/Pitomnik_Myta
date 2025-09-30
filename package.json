@@ -4,7 +4,7 @@
   "description": "Бизнес-платформа для питомниководства с каталогом растений",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && cd backend && npm run start",
+    "start": "npm run build && node index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && npm run dev",
     "client": "cd frontend && npm start",
