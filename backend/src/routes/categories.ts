@@ -21,7 +21,7 @@ router.get('/', async (req: Request, res: Response) => {
 });
 
 // GET /api/categories/:id - Получить категорию по ID
-router.get('/:id', async (req: Request, res: Response) => {
+router.get('/:id(\\d+)', async (req: Request, res: Response) => {
   try {
     const id = parseInt(req.params.id);
     if (isNaN(id)) {

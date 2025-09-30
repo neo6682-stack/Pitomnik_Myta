@@ -69,7 +69,7 @@ router.get('/statistics', async (req: Request, res: Response) => {
 });
 
 // GET /api/plants/:id - Получить растение по ID
-router.get('/:id', async (req: Request, res: Response) => {
+router.get('/:id(\\d+)', async (req: Request, res: Response) => {
   try {
     const id = parseInt(req.params.id);
     if (isNaN(id)) {
